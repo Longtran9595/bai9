@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SỰ KIỆN BÀN PHÍM</title>
+</head>
+<body onload="DocPhim()">
+<img id="myimg" src="https://vapa.vn/wp-content/uploads/2022/12/anh-3d-thien-nhien.jpeg" style="position: absolute;left:0; top:0;"  height="100" width="80">
+
+<script>
+function nhanlen(){
+    let anh = document.getElementById('myimg');
+    anh.style.top = parseInt(anh.style.top) - 5 + 'px';
+}
+function nhanxuong(){
+    let anh = document.getElementById('myimg');
+    anh.style.top = parseInt(anh.style.top) + 5 + 'px';
+}
+function sangtrai(){
+    let anh = document.getElementById('myimg');
+    anh.style.left = parseInt(anh.style.left) - 5 + 'px';
+}
+function sangphai(){
+    let anh = document.getElementById('myimg');
+    anh.style.left = parseInt(anh.style.left) + 5 + 'px';
+}
+function moveSelection(evt) {
+    switch (evt.keyCode) {
+        case 37:
+            sangtrai();
+            break;
+        case 39:
+            sangphai();
+            break;
+        case 38:
+            nhanlen();
+            break;
+        case 40:
+            nhanxuong();
+            break;
+
+    }
+}
+function DocPhim() {
+    window.addEventListener('keydown',moveSelection);
+}
+</script>
+</body>
+</html>
